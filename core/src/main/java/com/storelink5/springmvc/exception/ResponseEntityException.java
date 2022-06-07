@@ -23,8 +23,7 @@ public class ResponseEntityException extends ResponseEntityExceptionHandler {
             MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
 
         return new ResponseEntity<>(ApiResponseModel.builder()
-                .success("fail")
-                .status_message(ex.getBindingResult().getFieldError().getDefaultMessage())
+                .message(ex.getBindingResult().getFieldError().getDefaultMessage())
                 .result("").build(), HttpStatus.OK);
     }
 }

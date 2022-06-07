@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * RestAPI Controller
@@ -42,7 +43,8 @@ public class RestApiController extends BaseController {
         try {
             MemberDto signupResult = memberService.signup(member);
 //            return getApiResponse("success", MessageCode.회원가입_성공.getCode(), MessageCode.회원가입_성공.getStatus_message(), signupResult);
-            return getApiResponse(MessageCode.회원가입_성공, signupResult);
+            //return getApiResponse(MessageCode.회원가입_성공, signupResult);
+            return getApiResponse(signupResult);
         } catch (ServiceException e) {
 //            return getApiResponse("fail", e.getMessageCode().getCode(), e.getMessageCode().getStatus_message(), "");
             return getApiResponse(e.getMessageCode(), "");
@@ -91,5 +93,12 @@ public class RestApiController extends BaseController {
 //            return getApiResponse("fail", MessageCode.TOKEN_유효성.getCode(), MessageCode.TOKEN_유효성.getStatus_message(), "");
             return getApiResponse(MessageCode.TOKEN_유효성, "");
         }
+    }
+
+    @ApiOperation(value="", notes="")
+    @PostMapping("/v1/test")
+    public ApiResponseModel search(@ApiParam(value="", required = true) String param) {
+        //MemberDto signupResult = memberService.signup(null);
+        return null;
     }
 }

@@ -13,14 +13,14 @@ import lombok.Data;
 @Builder
 @Data
 public class ApiResponseModel {
-    // 성공 여부: success/fail
-    private String success;
-
     // 메세지 코드
-    private String message_code;
+    private String messageCode;
 
     // 응답 메세지
-    private String status_message;
+    private String message;
+
+    // 날짜(시간)
+    private String timeStamp;
 
     // 결과 데이터
     private Object result;
