@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'org.strelink5.springmvc'
+group 'com.storelink5.admin'
 version '1.0-SNAPSHOT'
 
 repositories {

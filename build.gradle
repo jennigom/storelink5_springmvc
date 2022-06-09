@@ -16,7 +16,7 @@ subprojects {
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
-    group = 'com.storelink5.springmvc'
+    group = 'com.storelink5'
     version = '1.0'
 
     repositories {
