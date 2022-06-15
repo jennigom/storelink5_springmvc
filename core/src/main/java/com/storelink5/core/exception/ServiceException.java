@@ -1,24 +1,14 @@
 package com.storelink5.core.exception;
 
-import lombok.Getter;
+import lombok.Data;
 
-/**
- * Service 관련 Exception 처리
- * @author JENNI
- * @version 1.0
- * @since 2022.05.19
- */
-
-@Getter
+@Data
 public class ServiceException extends Exception {
-    private MessageCode messageCode;
+    private String messageCode;
+    private String message;
 
-    public ServiceException(MessageCode messageCode) {
+    public ServiceException(String messageCode){
         this.messageCode = messageCode;
-    }
-
-    public ServiceException(MessageCode messageCode, String[] status_message) {
-        messageCode.setStatus_message(status_message);
-        this.messageCode = messageCode;
+        this.message     = ServiceMessages.getMessage(messageCode);
     }
 }

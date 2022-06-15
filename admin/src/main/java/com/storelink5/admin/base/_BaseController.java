@@ -1,6 +1,6 @@
 package com.storelink5.admin.base;
 
-import com.storelink5.core.exception.ServiceExceptionNew;
+import com.storelink5.core.exception.ServiceException;
 import com.storelink5.core.response.ServiceResponse;
 import org.springframework.stereotype.Controller;
 
@@ -18,7 +18,7 @@ import java.io.IOException;
  */
 
 @Controller
-public class BaseController1 extends HttpServlet {
+public class _BaseController extends HttpServlet {
     private static final String METHOD_GET = "GET";
     private static final String METHOD_POST = "POST";
 
@@ -58,7 +58,7 @@ public class BaseController1 extends HttpServlet {
             }
 
             System.out.println("actionService finished.");
-        } catch (ServiceExceptionNew se) {
+        } catch (ServiceException se) {
             se.printStackTrace();
             serviceResponse.setMessageCode(se.getMessageCode());
         } catch (Exception e) {
@@ -76,11 +76,11 @@ public class BaseController1 extends HttpServlet {
         return serviceResponse;
     }
 
-    public void actionGet() throws ServiceExceptionNew {
+    public void actionGet() throws ServiceException {
         System.out.println("called super actionGet");
     };
 
-    public void actionPost() throws ServiceExceptionNew {
+    public void actionPost() throws ServiceException {
         System.out.println("called super actionPost");
     };
 }
